@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration >
+  <context id="context1" >
+    <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://127.0.0.1:3306/yys" userId="root" password="12345678" />
+    <javaModelGenerator targetPackage="com.model.pojo" targetProject="MyBatisSample" />
+    <sqlMapGenerator targetPackage="com.model.mapper" targetProject="MyBatisSample" />
+    <javaClientGenerator targetPackage="com.model.dao" targetProject="MyBatisSample" type="XMLMAPPER" />
+    
+    <table schema="" tableName="tb_gkey" />
+  </context>
+</generatorConfiguration>
