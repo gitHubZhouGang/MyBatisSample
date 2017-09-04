@@ -42,6 +42,8 @@
 	<!--其实这里类的实例就是mybatis中SQLSession -->
 	<bean id="sqlSession" class="org.mybatis.spring.SqlSessionTemplate">
 		<constructor-arg index="0">
+		
+		
 			<ref bean="sqlSessionFactory" /><!-- 通过注入sqlSessionFactory做构造参数 -->
 		</constructor-arg>
 	</bean>
