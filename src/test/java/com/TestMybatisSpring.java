@@ -1,6 +1,6 @@
 package com;
 
-import static java.lang.reflect.Proxy.newProxyInstance;
+import java.lang.reflect.Proxy;
 
 import javax.sql.DataSource;
 
@@ -82,6 +82,7 @@ public class TestMybatisSpring {
 	 * 	@see SqlSessionFactory
 	 *  @see ExecutorType
 	 *  @see PersistenceExceptionTranslator
+	 *  @see Proxy
 	 */
 	@Test
 	public void initSqlSessionTemplate() {
@@ -98,7 +99,18 @@ public class TestMybatisSpring {
 		 *  3,调用第三构造函数
 		 *      使用动态代理方式产生SqlSession的代理对象newProxyInstance(SqlSessionFactory.class.getClassLoader(),new Class[] { SqlSession.class },new SqlSessionInterceptor());
 		 *      (动态代理的原理 参见JavaSe项目 基础)
+		 *  4,通过静态代理获得目标类之后我们就可以操作目标类  也就是SqlSession
 		 */
+		
+		/**
+		 * 在操作由代理实例化的时候  我看代理类到底为我我们做了什么呢?
+		 * @see SqlSessionTemplate$SqlSessionInterceptor
+		 * 
+		 * 嘿嘿  这里就隐藏着Spring对事务管理的结点  细的就不说了,自己看源代码咯
+		 * 
+		 * 至此MybatisSpring项目源代码  以及原理就差不多了!   下面就看Mybatis源码还有Spring源码咯
+		 */
+		
 	}
 	
 }
