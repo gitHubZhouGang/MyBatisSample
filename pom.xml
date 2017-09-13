@@ -74,6 +74,9 @@
 
 		<!-- druid -->
 		<druid.version>1.0.18</druid.version>
+
+		<!-- jedis -->
+		<jedis.version>2.9.0</jedis.version>
 	</properties>
 
 	<!-- 构建需要信息 -->
@@ -461,6 +464,12 @@
 			<groupId>com.alibaba</groupId>
 			<artifactId>druid</artifactId>
 			<version>${druid.version}</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/redis.clients/jedis -->
+		<dependency>
+			<groupId>redis.clients</groupId>
+			<artifactId>jedis</artifactId>
+			<version>${jedis.version}</version>
 		</dependency>
 
 
